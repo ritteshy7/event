@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--remix icon-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Poppins:ital,wght@0,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>EventEase</title>
+    
+    <style>
+      
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    --color-white:#fff;
+    --color-light:rgb(255,255,255,0.7);
+    --color-black:#000;
+    --color-bg: #7a7a7a;
+    --color-bg1:#2e3267;
+    --color-bg2:#424890;
+    --color-bg3: #101010;
+    --color-bg4: #b3b3b3;
+
+    --container-width-lg:80%;
+    --container-width-md:90%;
+    --container-width-sm:94%;
+
+    --transition:all 400ms ease;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color:var(--color-white) ;
+    background: var(--color-white);
+}
+
+/** navbar **/
+nav{
+  background: linear-gradient(45deg, #c193c5 , #7bc6cc);
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+
+
+ 
+/** change navbar style while scrolling **/
+.window-scroll {
+    background: #2b2b2b;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.container-nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-nav a{
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 500;
+    margin-right: auto;
+    padding: 40px;
+    color: #fff;
+} 
+.container-nav a img {
+    width: 50%;
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+}
+
+.container-nav ul {
+    list-style: none;
+    display: inline-flex;
+    height: 3rem;
+}
+nav button {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-white);
+    padding: 12px 12px;
+    border: 1px solid transparent;
+    font-size: 25px;
+    font-weight: 500;
+    transition: var(--transition); 
+    display: none; 
+}
+.nav-menu li a {
+    transition: 0.25s ease;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px;
+    margin-right: 20px;
+    color: #fff;
+}
+ul:hover a{
+    color: var(--color-bg);
+}
+ul:hover a:hover{
+    color: #fff;
+    box-shadow: 0 2px 0 0 turrentcolor;
+    border-bottom: .2px solid #e91e63;
+}
+
+@media screen and (max-width: 768px) {
+  nav button {
+    display: inline-block;
+    background: transparent;
+    font-size: 1.8rem;
+    color: var(--color-white);
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  nav button#close-menu-btn {
+    display: none;
+   }
+  .nav-menu {
+    position: fixed;
+    top: 5rem;
+    right: 5%;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    border-radius: 10px;
+    padding-top: 5px;
+    background-color: #2b2b2b;
+  }
+  .nav__menu ul li {
+    width: 100%;
+    height: 5.8rem;
+    color: #222;
+   }
+   .nav__menu li a {
+    background:#97caef ;
+    box-shadow: -4rem 6rem 10rem rgba(0 , 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #222;
+   }
+}
+
+/*.nav-menu li a:hover {
+    border-bottom: .2em solid white;
+    color: #ff99ac;
+}
+
+/* -------------- header --------------- */
+
+header{
+    font-family: 'Roboto', cursive;
+    font-size: 16px;
+    color: var(--color-bg3);
+    position: relative;
+    overflow: hidden;
+}
+.left-side button {
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    transition: .3 ease all;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: .2em .2em rgba(0, 0, 0, rgba(0, 0, 0, 0.2));
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    min-width: 5rem;
+    max-height: 5rem;
+    padding: .5rem 1rem;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: .1rem solid transparent;
+    border-radius: .4rem;
+    appearance: none;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+   background-color: #303ef7;
+    
+}
+
+.container {
+    min-height: 110vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+.left-side h2 {
+    font-size: 28px;
+}
+
+.left-side {
+    flex-basis: 40%;
+    padding: 35px;
+    border-radius: 50px;
+}  
+.left-side a{
+    text-decoration: none;
+    color: var(--color-bg3);
+    background-color: #e5beed;
+    padding: 15px;
+    border-radius: 50px;
+    margin-left: 20px;
+    transition: .2s all ease;
+}
+
+.heading {
+    font-size: 35px;
+    padding: 20px;
+}
+.subheading {
+    padding: 10px;
+}
+
+.gallery {
+    flex-basis: 50%;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 120px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.box {
+    background-size: cover;
+    background-position: top;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    background-blend-mode: hard-light;
+    transition: all 1s ease-in-out; 
+    font-size: 24px;
+    
+} 
+.box:hover{
+    background-color: #999;
+    background-position: center;
+}
+.row-2 {
+    grid-row: span 2;
+}
+.col-2 {
+    grid-column: span 2;
+}
+
+
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+
+.categories a {
+    color: #ff6347;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .left-side {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-side h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .left-side p{
+    text-align: center;
+    color: #666;
+    line-height: normal;
+
+  }
+  .left-side button {
+    margin-inline: auto;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .gallery {
+    width: 90%;
+  }
+}
+/* carousel */
+
+section {
+    margin-top: auto;
+    background-color: transparent;
+    display: flex;
+    min-height: 50vh;
+    padding: 30px 35px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+.wrapper{
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+  height: 340px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+.carousel img:first-child{
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img{
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
+  }
+} 
+
+/** services ***/ 
+ /*.text {
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .text span {
+    padding: 2rem;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ff6347;
+ }
+.services { 
+    width: 97vw;
+    height: 106vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:url("b.jpg");
+    overflow: hidden;
+  }
+  
+  .card {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 210px 80px;
+    grid-template-areas: "image" "text" "stats";
+  
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    
+  
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin:30px;
+  }
+  .card-image {
+    grid-area: image;
+    background: url("img/review1.jpeg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+  }
+  
+  .card-text {
+    grid-area: text;
+    margin: 25px;
+  }
+  .card-text .date {
+    color: rgb(255, 7, 110);
+    font-size:13px;
+  }
+  .card-text p {
+    color: grey;
+    font-size:15px;
+    font-weight: 300;
+  }
+  .card-text h2 {
+    margin-top:0px;
+    font-size:28px;
+    color: grey;
+  }
+  .card-stats {
+    grid-area: stats; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgb(255, 7, 110);
+  }
+  .card-stats .stat {
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+  }
+  .card-stats .border {
+    border-left: 1px solid rgb(172, 26, 87);
+    border-right: 1px solid rgb(172, 26, 87);
+  }
+  .card-stats .value{
+    font-size:22px;
+    font-weight: 500;
+  }
+  .card-stats .value sup{
+    font-size:12px;
+  }
+  .card-stats .type{
+    font-size:11px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+  
+  /*card2 *
+  .card-image.card2 {
+    background: url("img/review2.jpeg");
+    background-size: cover;
+  }
+  .card-text.card2 .date {
+    color: rgb(255, 77, 7);
+  }
+  .card-stats.card2 .border {
+    border-left: 1px solid rgb(185, 67, 20);
+    border-right: 1px solid rgb(185, 67, 20);
+  }
+  .card-stats.card2 {
+    background: rgb(255, 77, 7);
+  }
+  /* card3 *
+  .card-image.card3 {
+    background: url("img/img3.jpg");
+    background-size: cover;
+  }
+  .card-text.card3 .date {
+    color: rgb(0, 189, 63);
+  }
+  .card-stats.card3 .border {
+    border-left: 1px solid rgb(14, 122, 50);
+    border-right: 1px solid rgb(14, 122, 50);
+  }
+  .card-stats.card3 {
+    background: rgb(0, 189, 63);
+  }*/
+
+  .container-service {
+    width: 100%;
+    height: 100%;
+    padding: 10% 8%;
+  }
+  
+  .container-service h1 {
+    text-align: center;
+    padding-top: 10;
+    margin-bottom: 60px;
+    font-weight: 600;
+    font-size: 30px;
+    position: relative;
+    color: #ff6347;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 120px;
+  }
+  
+  .service {
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    border: .2px solid black;
+  }
+  
+  .service i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #303ef7;
+  }
+  
+  .service h2 {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .service:hover {
+    background: #c193c5;
+    color: #fff;
+    transform: scale(1.05);
+  }
+  .service:hover i {
+    color: #fff;
+  }
+  .service:hover h2 {
+    color: #fff;
+  }
+
+ 
+/* why to choose us */
+
+  /* .container_choice-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 20px 20px;
+  }
+  .container-left {
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .container-left h1{
+    color: #000;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 20px;
+  }
+  .container-left p {
+    color: #101010;
+    margin-left: 15px;
+  }
+  .container-left button {
+    cursor: pointer;
+    color: #000;
+    outline: none;
+    transition: .3 ease all;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: .2em .2em rgba(0, 0, 0, rgba(0, 0, 0, 0.2));
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    min-width: 7rem;
+    max-height: 5rem;
+    padding: .5rem 1rem;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: .1rem solid transparent;
+    border-radius: .4rem;
+    appearance: none;
+    margin: 20px 10px;
+    
+    
+  }
+  .container-right {
+    width: 48%;
+    height: auto;
+    margin-top: 40px;
+    padding: 6%;
+  }
+  .container-right-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-right-image img{
+    display: block;
+    object-fit: cover;
+    width: 125%;
+    max-width: 100vh;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  } */
+
+  
+  .about-us {
+    background-color: #f8f8f8;
+  }
+  .heading h1{
+    color: #ff6347;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 35px;
+  }
+  .container-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 65px auto;
+  }
+  .hero-content {
+    flex: 1;
+    width: 600px;
+    margin: 0 25px;
+    color: #000;
+    animation: fadeInUp 2s ease;
+  }
+  .hero-content h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .hero-content p{
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+  }
+  .hero-image {
+    flex: 1;
+    width: 600px;
+    margin: auto;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .hero-content button {
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    transition: .3 ease all;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: .2em .2em rgba(0, 0, 0, rgba(0, 0, 0, 0.2));
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    min-width: 7rem;
+    max-height: 5rem;
+    padding: .5rem 1rem;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: .1rem solid transparent;
+    border-radius: .4rem;
+    appearance: none;
+    margin: 0px 10px;
+    background-color: #303ef7;
+  }
+
+  @media screen and (max-width: 768px) {
+    .heading h1{
+      font-size: 45px;
+      margin-top: 30px;
+    }
+    .about-us{
+      margin: 0px;
+    }
+    .container-about {
+      width: 100%;
+      flex-direction: column;
+      margin: 0px;
+      padding: 0px 40px;
+    }
+    .hero-content {
+      width: 100%;
+      margin: 35px 0px;
+    }
+    .hero-content h2 {
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-content p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .hero-content button {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+    .hero-image{
+      width: 100%;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    
+  }
+
+
+  /** review */
+
+ /* .review {
+    margin: 0;
+    font-family: sans-serif;
+}
+.container-review h2 {
+  text-align: center;
+  font-size: 32px;
+  padding: 1.5rem;
+  color: #ff6347;
+}
+.container-review {
+    width: 100%;
+    height: 85vh;
+    background: #fff;
+    position: relative;
+    
+}
+.veiw-box{
+    width: 900px;
+    height: 350px;
+    border-radius: 220px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;    
+}
+#testimonials{
+    display: flex;
+    transition: 0.5s;
+}
+.user{
+    width: 800px;
+    text-align: center;
+    padding: 20px 70px;
+    box-sizing: border-box;
+    background: #333;
+    border-radius: 200px;
+    box-shadow: 0 10px 20px -5px #00000061;
+    position: relative;
+}
+
+.space{
+    margin: 0 70px;
+}
+.user img{
+    width: 120px;
+    border-radius: 50%;
+    border: 10px solid #de618a;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.user p{
+    font-size: 22px;
+    color: #f1f1f1;
+    line-height: 32px;
+    margin: 60px 0 30px;
+}
+.user p::before{
+    content: '\201C';
+    font-size: 120px;
+    height: 0;
+    display: inline-block;
+    vertical-align: -57;
+    margin-right: 10px;
+}
+.user p::after{
+    content: '\201D';
+    font-size: 120px;
+    height: 0;
+    display: inline-block;
+    vertical-align: -70;
+    margin-left: 10px;
+}
+.user h3{
+    font-size: 26px;
+    color: #dbdadd;
+}
+.controls{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.controls span{
+    width: 15px;
+    height: 15px;
+    background: #e91e63;
+    border-radius: 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.active{
+    width: 45px !important;
+} 
+@media screen and (max-width:768) { 
+  .container-review {
+    width: 100%;
+    height: 100%;
+  }
+  .user {
+    width: 700px;
+  }
+  
+} */
+/* .container3 { 
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3f2fd;
+}
+.testimonals{
+  width: 100%;
+  height: 70vh;
+  padding: 0 50px;
+  background-color: #fff;
+}
+.testimonals .image {
+  height: 170px;
+  width: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  
+} 
+.testimonals .slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 30px;
+  
+}
+.slide p {
+  text-align: center;
+  padding: 0 100px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222;
+}
+.slide i {
+  font-size: 30px;
+  color: #4070f4;
+} 
+.slide .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}*/ 
+
+.container2 {
+  background-image: url("img/bg.c.jpeg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  
+}
+
+.container-review {
+  padding: 1rem;
+  display: flex;
+  gap: 7rem;
+}
+
+.container__left h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.container__left p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.container__left button {
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #303ef7;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.container__right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card img {
+  max-width: 75px;
+  border-radius: 100%;
+}
+
+.card__content {
+  display: flex;
+  gap: 1rem;
+}
+
+.card__content span i {
+  font-size: 2rem;
+  color: #222;
+}
+.card__details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__details p {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.card__details h4 {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width:768) {
+  
+  .container-review {
+    display: flex;
+    flex-direction: column !important;
+    
+  }
+  .cr1{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .container__left {
+    display: flex;
+    justify-content: center;
+
+  }
+  .container__right {
+    text-align: center;
+    align-self: stretch;
+    height: fit-content;
+    border-top: solid thin rgba(0 , 0, 0, 0.1);
+  }
+}
+
+/* footer */ 
+footer {
+  background-color: #2b2b2b;
+  padding: 70px 0;
+  line-height: 1.5;
+}
+.container-footer {
+  max-width: 1170px;
+  margin: auto;
+}
+/* .row {
+  display: flex;
+  flex-wrap: wrap;
+} */
+ul {
+  list-style: none;
+}
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+} 
+.footer-col h4 {
+  font-size: 18px;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  position: relative;
+} 
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+} 
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-decoration: capitalize;
+  color: #ffff;
+  transition: .3s ease all;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbb;
+  display: block;
+}
+.footer-col ul li a:hover {
+  color: #fff;
+  padding-left: 10px;
+}
+.footer-col .socials-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(225, 225, 225, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.footer-col .socials-links a:hover {
+  color: #24262b;
+  background-color: #fff;
+} 
+@media screen and (max-width:768px) {
+  .row {
+    flex-direction: column!important;
+    padding-left: 5px;
+  }
+  
+}
+    </style>
+
+</head>
+<body>
+
+     <!-- navbar-->
+
+     <nav>
+        <div class="container-nav">
+            <a href="home.html">EventEase</a>
+           <div class="nav-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="login.html">log in</a></li>
+            </ul></div> 
+            <button id="open-menu-btn"><i class="ri-menu-line"></i></button>
+            <button id="close-menu-btn"><i class="ri-close-fill"></i></button>
+        </div>
+     </nav>
+
+     <!--grid container-->
+
+     <header>
+        <div class="container">
+            <div class="left-side">
+                <h2 class="heading">
+                    Welcome to EventEase
+                </h2>
+                <p class="subheading">
+                    EventEase is a frontend website designed to streamline the event management process and provide a one-stop platform for planning, organizing, and promoting events. Whether it's a corporate conference, a music festival, or a community gathering, EventEase aims to simplify the event planning experience and help event organizers execute successful and memorable events.
+              </p>
+              <div class="btn"><button type="button">Get started</button></div>
+                
+                
+            </div>
+            <div class="gallery">
+                <div class="box col-2"  style="background-image: url(https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80);">Venue</div>
+                <div class="box row-2" style="background-image: url(https://images.unsplash.com/photo-1485178075098-49f78b4b43b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80);">caterers</div>
+                <div class="box row-2" style="background-image: url(https://images.unsplash.com/photo-1551972873-b7e8754e8e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=327&q=80);">Decorations</div>
+                <div class="box" style="background-image: url(https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80);">Party</div>
+                <div class="box col-2" style="background-image: url(https://images.unsplash.com/photo-1524824267900-2fa9cbf7a506?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);">wedding</div>
+               <!--<div class="box col-2" style="background-image: url(https://images.unsplash.com/photo-1531956531700-dc0ee0f1f9a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);">birthday</div> 
+                <div class="box row-2" style="background-image: url(https://images.unsplash.com/photo-1534855499929-aeadf3f0c23f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80);">dj</div>--> 
+                
+            </div>
+        </div>
+
+     </header> 
+
+     <div class="categories">
+        <a href="#"><span>All Categories</span></a>
+    </div>
+
+    <section>
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">
+              <img src="img/holidays.jpg"  alt="img" draggable="false">
+              <img src="img/Boutique.jpg" alt="img" draggable="false">
+              <img src="img/cake.jpg" alt="img" draggable="false">
+              <img src="img/dj.jpg" alt="img" draggable="false">
+              <img src="img/parlor.jpg" alt="img" draggable="false">
+              <img src="img/photographer.jpg" alt="img" draggable="false">
+              <img src="img/venue.jpg" alt="img" draggable="false">
+              <img src="img/food.jpg" alt="img" draggable="false">
+              <img src="img/wedding.jpg" alt="img" draggable="false">
+            </div>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+          </div>
+     </section>  
+ 
+
+
+
+
+
+
+
+
+     <!-- <<<<<<<<<<<<<<< why to choose us  >>>>>>>>>>>>> 
+    <div class="container_choice-container">
+        <div class="container-left">
+            <h1>Why to choose us?</h1>
+            <p> EventEase as the preferred event management platform offers several compelling reasons:Streamlined Event Management,Enhanced Attendee Experience,Data Insights and Analytics,User-Friendly Interface,Efficient Event Promotion,Cost-Effectiveness,Customization and Branding.Overall, choosing EventEase can significantly improve the efficiency and success of event planning and management. Its feature-rich platform and user-friendly interface contribute to an enhanced attendee experience and empower event organizers with valuable insights to continually improve future events.</p>
+            <button type="button">view more</button>
+        </div>
+        <div class="container-right">
+            <div class="container-right-image">
+                <img src="img/women.jpg" alt="">
+            </div>
+
+        </div>
+
+    </div>--> 
+
+    <div class="about-us">
+      <div class="heading">
+        <h1>About us</h1>
+      </div>
+      <div class="container-about">
+        <div class="hero-content">
+          <h2>Why to choose us ?</h2>
+          <p> EventEase as the preferred event management platform offers several compelling reasons:Streamlined Event Management,Enhanced Attendee Experience,Data Insights and Analytics,User-Friendly Interface,Efficient Event Promotion,Cost-Effectiveness,Customization and Branding.Overall, choosing EventEase can significantly improve the efficiency and success of event planning and management. Its feature-rich platform and user-friendly interface contribute to an enhanced attendee experience and empower event organizers with valuable insights to continually improve future events.</p>
+         <div class="btn"><button class="cta-button">View More</button></div>
+        </div>
+        <div class="hero-image">
+          <img src="img/why to 2.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+      
+     <!-- ********* services section ********** -->
+     <!--<div class="text">
+        <span>Our Services</span>
+        <p>EventEase's services, the key to your event's grace, making every moment fall into place.</p>
+     </div>
+     <div class="services"> 
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-text">
+              <span class="date">EventEase</span>
+              <h2>Customizable Packages</h2>
+              <p>vendor services to create personalized event packages</p>
+            </div>
+            <div class="card-stats">
+              <div class="stat">
+                <div class="value">4<sup>m</sup></div>
+                <div class="type">read</div>
+              </div>
+              <div class="stat border">
+                <div class="value">5123</div>
+                <div class="type">views</div>
+              </div>
+              <div class="stat">
+                <div class="value">32</div>
+                <div class="type">comments</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image card2"></div>
+            <div class="card-text card2">
+              <span class="date">EventEase</span>
+              <h2>Event Coordination</h2>
+              <p>Coordinate with vendors seamlessly through our platform for smooth event execution.</p>
+            </div>
+            <div class="card-stats card2">
+              <div class="stat">
+                <div class="value">7<sup>m</sup></div>
+                <div class="type">read</div>
+              </div>
+              <div class="stat border">
+                <div class="value">7152</div>
+                <div class="type">views</div>
+              </div>
+              <div class="stat">
+                <div class="value">21</div>
+                <div class="type">comments</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+              <div class="card-image card3"></div>
+              <div class="card-text card3">
+                <span class="date">EventEase</span>
+                <h2>Category Sections</h2>
+                <p>Explore dedicated pages for each event category.</p>
+              </div>
+              <div class="card-stats card3">
+                <div class="stat">
+                  <div class="value">5<sup>m</sup></div>
+                  <div class="type">read</div>
+                </div>
+                <div class="stat border">
+                  <div class="value">3021</div>
+                  <div class="type">views</div>
+                </div>
+                <div class="stat">
+                  <div class="value">15</div>
+                  <div class="type">comments</div>
+                </div>
+              </div>
+            </div>
+     </div> -->
+
+     <div class="container-service">
+      <h1>Our services</h1>
+
+      <div class="row">
+        <div class="service">
+          <i class="fas fa-laptop-code"></i>
+          <h2 style="color: #000;">Customizable Packages</h2>
+          <p style="color: #666;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, maxime eius. Amet sed similique ipsum omnis. Sit cupiditate laboriosam tenetur officia, ipsum, fugiat excepturi nesciunt, quos dolor eligendi libero aut.</p>
+        </div>
+
+        <div class="service">
+          <i class="fas fa-laptop-code"></i>
+            <h2 style="color: #000;">Customizable categories</h2>
+            <p style="color: #666;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, maxime eius. Amet sed similique ipsum omnis. Sit cupiditate laboriosam tenetur officia, ipsum, fugiat excepturi nesciunt, quos dolor eligendi libero aut.</p>
+        </div>
+
+        <div class="service">
+            <i class="fas fa-laptop-code"></i>
+              <h2 style="color: #000;">Event cordination</h2>
+                  <p style="color: #666;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, maxime eius. Amet sed similique ipsum omnis. Sit cupiditate laboriosam tenetur officia, ipsum, fugiat excepturi nesciunt, quos dolor eligendi libero aut.</p>
+          </div>
+
+          
+
+    </div>
+  </div>
+
+
+
+
+     <!-- review --> 
+<!--<div class="review">
+     <div class="container-review">
+      <h2>Review</h2>
+        <div class="veiw-box">
+            <div id="testimonials">
+                
+                <div class="user">
+                    <img src="img/person1.jpeg" alt="">
+                    <p>EventEase was a lifesaver for my wedding planning!</p>
+                    <h3>Sarah123</h3>
+
+                    <h3>⭐⭐⭐⭐⭐ (5/5)</h3>
+                </div>
+                
+                <div class="user space">
+                    <img src="img/person3.jpeg" alt="">
+                    <p> EventEase was a lifesaver for my wedding planning!</p>
+                    <h3>Steve McCurry</h3>
+                    <h3>⭐⭐⭐⭐⭐ (5/5)</h3>
+                </div>
+                
+                <div class="user">
+                    <img src="img/person2.jpeg" alt="">
+                    <p>EventEase was a lifesaver for my wedding planning!</p>
+                    <h3>Merlin Nguyen</h3>
+                    <h3>⭐⭐⭐⭐ (4/5)</h3>
+                </div>
+                
+                
+            </div>
+            
+            <div class="controls">
+                <span id="control1"></span>
+                <span id="control2" class="active"></span>
+                <span id="control3"></span>
+            </div>
+            
+        </div>
+    </div>
+</div> -->
+
+<section class="container2">
+  <div class="container-review">
+   <div class="cr1">
+    <div class="container__left">
+      <h1>Read what our customers love about us</h1>
+      <p>
+        Over 200 companies frim diverse sectors consult us to enhance the
+        user experience of their products and services.
+      </p>
+      <p>
+        We have helped companies increase their customer base and generate
+        multifold revenue with our service.
+      </p>
+      <button>Read our success stories</button>
+    </div>
+    <div class="container__right">
+      <div class="card">
+        <img src="img/pic1.jpeg" alt="user" />
+        <div class="card__content">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <div class="card__details">
+            <p>
+              We had a great time collaboraring with the Filament team. They
+              have my high recommendation!
+            </p>
+            <h4>- Marnus Stephen</h4>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pic2.jpeg" alt="user" />
+        <div class="card__content">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <div class="card__details">
+            <p>
+              The team drastically improved our product's user experience &
+              increased our business outreach.
+            </p>
+            <h4>- Andrew Jettpace</h4>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pic3.jpeg" alt="user" />
+        <div class="card__content">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <div class="card__details">
+            <p>
+              I absolutely loved working with the Filament team. Complete
+              experts at what they do!
+            </p>
+            <h4>- Stacy Stone</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+        
+</section>
+
+<!-- footer -->
+
+<footer class="footer">
+  <div class="container-footer">
+    <div class="row">
+      <div class="footer-col">
+        <h4>EventEase</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="">services</a></li>
+          <li><a href="">terms and conditions</a></li>
+          <li><a href="">privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">return</a></li>
+          <li><a href="#">event status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>categories</h4>
+        <ul>
+          <li><a href="">wedding</a></li>
+          <li><a href="">party</a></li>
+          <li><a href="">food festivals</a></li>
+          <li><a href="">venue</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="socials-links">
+          <a href=""><i class="fab fa-facebook-f"></i></a>
+          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</footer>
+
+     <script src="https://kit.fontawesome.com/ae9f1bb8c0.js" crossorigin="anonymous"></script>
+
+
+     <script>
+         // change navbar styles on scrool 
+ window.addEventListener('scroll' , () => {
+    document.querySelector('nav').classList.toggle('window-scroll', window.scrollY > 0)
+ })
+
+ // show/hide nav menu 
+ const menu = document.querySelector(".nav-menu");
+ const menuBtn = document.querySelector("#open-menu-btn");
+ const closeBtn = document.querySelector("#close-menu-btn");
+
+
+ menuBtn.addEventListener('click', () => {
+    menu.style.display = "flex";
+    closeBtn.style.display = "inline-block";
+    menuBtn.style.display = "none";
+ })
+
+ // close nav menu 
+ const closeNav = () => {
+    menu.style.display="none";
+    closeBtn.style.display = "none";
+    menuBtn.style.display = "inline-block";
+ }
+
+ closeBtn.addEventListener('click', closeNav) 
+
+ const carousel = document.querySelector(".carousel"),
+firstImg = carousel.querySelectorAll("img")[0],
+arrowIcons = document.querySelectorAll(".wrapper i");
+
+let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+
+const showHideIcons = () => {
+    // showing and hiding prev/next icon according to carousel scroll left value
+    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+}
+
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+        // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+        setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+    });
+});
+
+const autoSlide = () => {
+    // if there is no image left to scroll then return from here
+    if(carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+
+    positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+    let firstImgWidth = firstImg.clientWidth + 14;
+    // getting difference value that needs to add or reduce from carousel left to take middle img center
+    let valDifference = firstImgWidth - positionDiff;
+
+    if(carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+        return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+    // if user is scrolling to the left
+    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+}
+
+const dragStart = (e) => {
+    // updatating global variables value on mouse down event
+    isDragStart = true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => {
+    // scrolling images/carousel to left according to mouse pointer
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging = true;
+    carousel.classList.add("dragging");
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+    showHideIcons();
+}
+
+const dragStop = () => {
+    isDragStart = false;
+    carousel.classList.remove("dragging");
+
+    if(!isDragging) return;
+    isDragging = false;
+    autoSlide();
+}
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+
+document.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("touchend", dragStop);
+
+
+var testimonials = document.getElementById('testimonials');
+        var control1 = document.getElementById('control1');
+        var control2 = document.getElementById('control2');
+        var control3 = document.getElementById('control3');
+        
+        
+        control1.onclick=function(){
+            testimonials.style.transform = "translateX(870px)";
+            control1.classList.add("active");
+            control2.classList.remove("active");
+            control3.classList.remove("active");
+        }
+        
+        control2.onclick=function(){
+            testimonials.style.transform = "translateX(0px)";
+            control1.classList.remove("active");
+            control2.classList.add("active");
+            control3.classList.remove("active");
+        }
+        
+        control3.onclick=function(){
+            testimonials.style.transform = "translateX(-870px)";
+            control1.classList.remove("active");
+            control2.classList.remove("active");
+            control3.classList.add("active");
+        }
+
+        
+     </script>
+
+
+</body>
+</html>
